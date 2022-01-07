@@ -1,6 +1,6 @@
 # Instructions
 
-This is a demo of a basic ticket management system that I designed and wrote at high school and modified to be published on GitHub in January 2022.
+This is a basic ticket management system that I designed and wrote at high school and modified to be published on GitHub in January 2022.
 
 ## Setup & Run
 
