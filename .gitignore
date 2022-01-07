@@ -112,3 +112,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Database
+*.sqlite
+
+# Font Awesome
+issue_mgr/static/font_awesome/

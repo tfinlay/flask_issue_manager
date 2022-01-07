@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+
+{% set page_name = "Ticket Detail" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/ticket_view.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/font_awesome/css/all.min.css"/>
+    <script type="application/javascript" src="/static/js/ticket_view.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="ticketTextContainer">
+        <h1>{{ ticket["summary"]|escape }}</h1>
+        {% for line in ticket["description"].split("\n") %}
+        <p>{{ line }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="ticketSidebar">
+        <button onclick="closeTicket()">Close Ticket</button>
+        <p style="cursor: initial;">Creator: <span>{{ ticket["creator"] }}</span> <span>({{ ticket_creator_role_name }})</span></p>
+        <p id="category" onclick="editCategory()" data-categoryId="{{ ticket["category_id"] if ticket["category_id"] is not none }}">
+            <span>Ticket Category: </span>
+            <span id="categoryName">{{ ticket["category_name"] if ticket["category_name"] else "None" }}</span>
+            <i class="fas fa-pen"></i>
+        </p>
+        <p id="assignee" onclick="editAssignee()" data-assignee="{{ ticket["assignee"] if ticket["assignee"] is not none }}">
+            <span>Ticket Assignee: </span>
+            <span id="assigneeName">{{ ticket["assignee"] if ticket["assignee"] else "None" }}</span>
+            <i class="fas fa-pen"></i>
+        </p>
+    </div>
+{% endblock %}

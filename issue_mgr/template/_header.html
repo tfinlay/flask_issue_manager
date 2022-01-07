@@ -1,0 +1,15 @@
+<div class="header">
+    <span class="page_box">
+        <span>Hello {{ user.username|e|title }}!</span><br/>
+        <span class="page_title">{{ page_name }}</span>
+    </span>
+    <button class="logout" onclick="location.href='/logout'">Log Out</button>
+
+    {% if user.role|is_admin %}
+    <div class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/tickets">All Tickets</a>
+        <a href="/create_issue">Create Issue</a>
+    </div>
+    {% endif %}
+</div>

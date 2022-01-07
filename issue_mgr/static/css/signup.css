@@ -1,0 +1,19 @@
+.content {
+    width: 200px;
+    position: absolute;
+    left: calc(50% - 125px);
+    top: calc(50% - 125px);
+    background: white;
+    text-align: center;
+}
+
+.content form ul {
+    list-style: none;
+    color: red;
+    font-size: 12px;
+    padding: 0;
+}
+
+.content form p {
+    margin: 5px 0;
+}

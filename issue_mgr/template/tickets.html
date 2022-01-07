@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+
+{% set page_name = "All Tickets" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css"/>
+{% endblock %}
+
+{% macro insert_ticket(ticket) %}
+<div class="ticket" onclick="location.href = '/tickets/{{ ticket["ticket_id"] }}';">
+    <div class="ticketId">
+        <span>#{{ ticket["ticket_id"] }}</span>
+    </div>
+
+    <div class="ticketInfo">
+        <p class="summary">{{ ticket["summary"]|escape }}</p>
+        {% if ticket["category_id"] %}
+        <span class="categoryId" data-catId="{{ ticket["category_id"] }}">{{ ticket["category_name"] }}</span>
+        {% endif %}
+        <p>
+            Creator: {{ ticket["creator"]|escape }} ({{ ticket["creator_role"]|role_name }})
+            {% if ticket["assignee"] %}
+                <span style="margin-left: 15px;">Assignee: {{ ticket["assignee"]|escape }}</span>
+            {% endif %}
+        </p>
+
+    </div>
+</div>
+{% endmacro %}
+
+{% block content %}
+    <div>
+    <h1>All Tickets</h1>
+    {% for ticket in tickets %}
+        {{ insert_ticket(ticket) }}
+    {% endfor %}
+
+    {% if tickets|length == 0 %}
+    <p>There are no tickets yet!</p>
+    {% endif %}
+    </div>
+
+{% endblock %}

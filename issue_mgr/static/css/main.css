@@ -1,0 +1,57 @@
+html, body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    background: beige;
+
+    font-family: 'Open Sans', 'Comic Sans MS', sans-serif;
+}
+
+.copyright {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    font-size: 12px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page {
+    margin: auto;
+    max-width: 1000px;
+    align-self: center;
+    display: block;
+}
+
+/* Header */
+
+.header {
+    margin-top: 25px;
+}
+
+.header .page_title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.header .logout {
+    float: right;
+    font-size: 14px;
+}
+
+.header .nav a {
+    margin-right: 15px;
+}
+
+/* content */
+.content {
+    margin-top: 15px;
+    padding: 5px 25px;
+    background: white;
+}

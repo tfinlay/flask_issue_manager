@@ -1,0 +1,21 @@
+form > * {
+    margin-bottom: 15px;
+}
+
+#summaryField {
+    width: 100%;
+    display: block;
+}
+
+#descField {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+form ul {
+    list-style: none;
+    color: red;
+    font-size: 12px;
+    padding: 0;
+}

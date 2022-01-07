@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+
+{% block title %}Login{% endblock %}
+{% block head %}
+    <link href="/static/css/signup.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<form method="post">
+    <h1>Sign Up</h1>
+
+    <p><input name="username" type="text" placeholder="Username"/></p>
+    <p><input name="password" type="password" placeholder="Password"/> </p>
+    <p><select name="role">
+        <option>Choose Role</option>
+        <option value="0">Administrator</option>
+        <option value="1">Student</option>
+        <option value="2">Teacher</option>
+    </select></p>
+
+    <ul>
+        {% for msg in get_flashed_messages() %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+
+    <input type="submit" value="Sign Up">
+    <div><a href="/login">Log in</a> instead</div>
+</form>
+{% endblock %}

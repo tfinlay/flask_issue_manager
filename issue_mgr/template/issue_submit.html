@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% set page_name = "Report an Issue" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/issue_submit.css"/>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <input id="summaryField" type="text" name="summary" placeholder="Issue Summary (required)"/>
+    <textarea id="descField" name="description" placeholder="Issue Description (required)"></textarea>
+
+    <ul>
+        {% for msg in get_flashed_messages() %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

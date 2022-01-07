@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+passlib = "*"
+argon2-cffi = "*"
+Flask = "*"
+Flask-Login = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3"
+
+[scripts]
+start = "cd issue_mgr && python app.py"
